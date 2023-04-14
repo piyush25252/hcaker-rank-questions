@@ -1,0 +1,113 @@
+n=input()
+a=0
+k=0
+while(k!=6174):
+    x=sorted(n)
+    y="".join(x)
+    x.reverse()
+    x=int("".join(x))
+    y=int(y)
+    if (x>=y):
+        k=x-y
+    else :
+        k=y-x
+    a=a+1
+    n=k
+    n=str(n)
+print(a)    
+    
+    
+
+n=int(input())
+c=0
+for i in range (1,2**n):
+    if ("11" not in bin(i)):
+        c=c+1
+print(c)        
+
+
+
+d=int(input())
+y=0
+w=0
+nd=0
+while(d!=0):
+    y=d//365
+    d=d%365
+    w=d//7
+    d=d%7
+    nd=d
+    d=d-nd
+print(y)
+print(w)
+print(nd)
+    
+
+    
+n=input()
+i=0
+l=n.split()
+ls=list(map(int,l))
+rec=0
+for i in range(len(ls)):
+    if (i>rec):
+        break
+    rec=max(rec,i+ls[i])
+print(rec>=len(ls)-1)  
+
+
+
+n=int(input())
+k="1"
+x=''
+count=0
+print(k)
+for i in range (1,n):
+    x=""
+    s=k
+    k=""
+    for j in range (0,len(s),2):
+        if (s[j] not in x):
+            x=" "
+            count=1
+            for r in range(j+2,len(s),2):
+                if (s[r]==s[j]):
+                    count+=1
+                else :
+                    break
+            x=x+s[j]
+            k=k+str(count)+" "+s[j]+" "
+    print(k)       
+
+
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'floor_function' function below.
+#
+# The function is expected to return an INTEGER.
+# The function accepts INTEGER_ARRAY board as parameter.
+#
+
+def floor_function(board):
+    return (a[0]//a[1])
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    a = list(map(int, input().rstrip().split()))
+
+    result = floor_function(a)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+  
+
